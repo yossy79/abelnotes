@@ -28,6 +28,7 @@ import 'package:abelnotes/features/modules/module_manifest.dart';
 import 'package:abelnotes/features/modules/module_registry.dart';
 import 'package:abelnotes/core/providers/remote_store_provider.dart';
 import 'package:abelnotes/l10n/app_localizations.dart';
+import 'package:abelnotes/core/config/japanese_font.dart';
 import 'package:abelnotes/ui/screens/trash_screen.dart';
 import 'package:abelnotes/ui/theme/hw_icons.dart';
 import 'package:abelnotes/ui/theme/hw_theme.dart';
@@ -615,7 +616,11 @@ class _GeneralSection extends ConsumerWidget {
             for (final o in options)
               ListTile(
                 title: Text(o.$2,
-                    style: TextStyle(color: p.ink0, fontSize: 14)),
+                    style: TextStyle(
+                      color: p.ink0,
+                      fontSize: 14,
+                      fontFamilyFallback: o.$1 == 'ja' ? japaneseFontFallback : null,
+                    )),
                 trailing: o.$1 == current
                     ? HwIcon('check', size: 16, color: p.accent)
                     : null,
