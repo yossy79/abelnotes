@@ -570,6 +570,8 @@ class _GeneralSection extends ConsumerWidget {
         return l10n.setLanguageFrench;
       case 'pt':
         return l10n.setLanguagePortuguese;
+      case 'ja':
+        return l10n.setLanguageJapanese;
       case 'zh':
         return l10n.setLanguageChinese;
       default:
@@ -591,6 +593,7 @@ class _GeneralSection extends ConsumerWidget {
       ('de', l10n.setLanguageGerman),
       ('fr', l10n.setLanguageFrench),
       ('pt', l10n.setLanguagePortuguese),
+      ('ja', l10n.setLanguageJapanese),
       ('zh', l10n.setLanguageChinese),
     ];
     final picked = await showScrollableSheet<String>(
